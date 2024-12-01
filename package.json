@@ -22,7 +22,7 @@
 		"clean": "pnpm -r clean && rimraf .turbo node_modules",
 		"pre-commit-tasks": "turbo build type-check test analyze",
 		"ci:version": "changeset version && pnpm format:fix",
-		"ci:publish": "changeset publish"
+		"ci:publish": "pnpm build && changeset publish"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
