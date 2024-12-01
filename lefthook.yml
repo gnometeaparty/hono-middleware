@@ -1,0 +1,17 @@
+pre-commit:
+  parallel: true
+  commands:
+    secrets:
+      run: trufflehog git file://. --since-commit HEAD --only-verified --fail
+    format-check:
+      run: pnpm format:check
+    declutter:
+      run: pnpm declutter
+    pre-commit-tasks:
+      run: pnpm pre-commit-tasks
+
+pre-push:
+  parallel: true
+  commands:
+    commitlint:
+      run: pnpm commitlint --last --verbose

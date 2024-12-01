@@ -1,0 +1,28 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"files": {
+		"ignore": [".turbo", "coverage"]
+	},
+	"formatter": {
+		"enabled": true,
+		"lineWidth": 120,
+		"ignore": ["node_modules", "dist", "meta"]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"nursery": {
+				"useConsistentCurlyBraces": "warn"
+			},
+			"correctness": {
+				"noUnusedImports": "error"
+			}
+		},
+		"ignore": ["node_modules", "dist", "meta"]
+	},
+	"organizeImports": {
+		"enabled": true,
+		"ignore": ["node_modules", "dist"]
+	}
+}

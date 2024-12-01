@@ -1,0 +1,50 @@
+{
+	"name": "@gnometeaparty/hono-header-version",
+	"version": "0.1.0",
+	"private": false,
+	"type": "module",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org",
+		"access": "public"
+	},
+	"description": "Middleware for Hono to evaluate the API version from a header.",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/gnometeaparty/hono-middleware.git"
+	},
+	"homepage": "https://github.com/gnometeaparty/hono-middleware#readme",
+	"keywords": ["hono", "middleware", "api", "versioning"],
+	"author": "Elijah Passmore <elijah.passmore@gnometeaparty.com>",
+	"license": "MIT",
+	"files": ["dist"],
+	"main": "dist/index.cjs",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"scripts": {
+		"type-check": "tsc --noEmit",
+		"build": "tsup",
+		"test": "vitest run --coverage --passWithNoTests",
+		"analyze": "attw --pack .",
+		"pre-release": "pnpm type-check && pnpm build && pnpm analyze && pnpm test",
+		"clean": "rimraf dist .turbo coverage node_modules"
+	},
+	"peerDependencies": {
+		"hono": ">=3.9.0"
+	},
+	"devDependencies": {
+		"@arethetypeswrong/cli": "^0.17.0",
+		"@tsconfig/node20": "20.1.4",
+		"@vitest/coverage-istanbul": "^2.1.6",
+		"rimraf": "6.0.1",
+		"tsup": "^8.3.5",
+		"typescript": "5.6.2",
+		"vitest": "^2.1.6"
+	},
+	"packageManager": "pnpm@9.12.1"
+}

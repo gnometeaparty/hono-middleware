@@ -1,0 +1,10 @@
+{
+	"$schema": "https://unpkg.com/knip@5/schema.json",
+	"workspaces": {
+		"packages/*": {
+			"entry": ["src/index.ts!"],
+			"project": ["src/**/*.{js,ts,tsx}!", "src/**/*.test.{js,ts,tsx}"],
+			"ignoreDependencies": ["@tsconfig/node20"]
+		}
+	}
+}

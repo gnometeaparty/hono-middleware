@@ -1,0 +1,3 @@
+{
+	"extends": ["github>gnometeaparty/renovate-config", "customManagers:biomeVersions"]
+}

@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@tsconfig/node20/tsconfig.json",
+	"compilerOptions": {
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"moduleResolution": "bundler",
+		"strictNullChecks": true,
+		"lib": ["ESNext", "DOM"],
+		"target": "ESNext",
+		"module": "ESNext"
+	},
+	"exclude": ["node_modules"]
+}

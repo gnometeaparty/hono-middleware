@@ -1,0 +1,19 @@
+name: stale
+
+on:
+  schedule:
+    - cron: "30 1 * * *"
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@28ca1036281a5e5922ead5184a1bbf96e5fc984e # v9
+        with:
+          stale-issue-message: "This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs."
+          close-issue-message: "This issue has been automatically closed due to inactivity."
+          any-of-labels: "needs reproduction,needs more info"
+          exempt-issue-labels: "needs triage"
+          labels-to-add-when-unstale: "needs triage"
+          days-before-stale: 21
+          days-before-pr-stale: -1
