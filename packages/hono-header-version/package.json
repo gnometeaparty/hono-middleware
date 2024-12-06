@@ -26,9 +26,15 @@
 			"require": "./dist/index.cjs"
 		}
 	},
+	"size-limit": [
+		{
+			"limit": "500 B",
+			"path": "./dist/index.js"
+		}
+	],
 	"scripts": {
 		"type-check": "tsc --noEmit",
-		"build": "tsup",
+		"build": "tsup && size-limit",
 		"test": "vitest run --coverage --passWithNoTests",
 		"analyze": "attw --pack .",
 		"pre-release": "pnpm type-check && pnpm build && pnpm analyze && pnpm test",
@@ -39,9 +45,11 @@
 	},
 	"devDependencies": {
 		"@arethetypeswrong/cli": "^0.17.0",
+		"@size-limit/preset-small-lib": "^11.1.6",
 		"@tsconfig/node20": "20.1.4",
 		"@vitest/coverage-istanbul": "^2.1.6",
 		"rimraf": "6.0.1",
+		"size-limit": "^11.1.6",
 		"tsup": "^8.3.5",
 		"typescript": "5.6.2",
 		"vitest": "^2.1.6"
